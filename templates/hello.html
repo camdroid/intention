@@ -1,0 +1,10 @@
+<h1>Countdown Clock</h1>
+<div id="clockdiv">
+  <script>var minutes = '{{minutes_from_flask }}'</script>
+  <div>
+    <span class="minutes"></span>
+    <span class="seconds"></span>
+  </div>
+  <link rel="stylesheet" href="{{ url_for('static', filename='countdown.css') }}"></link>
+  <script type="text/javascript" src="{{ url_for('static', filename='countdown.js') }}"></script>
+</div>
