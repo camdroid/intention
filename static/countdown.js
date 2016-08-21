@@ -29,8 +29,18 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-// minutes = {{ minutes_from_flask }}
-// minutes = 15
+function resetTimer(id, endtime) {
+  var deadline = new Date(Date.parse(new Date()) + endtime);
+  initializeClock(id, deadline);
+}
+
+function setupButton() {
+  var button = document.getElementById("reset");
+  button.addEventListener("click", function(){
+    resetTimer('clockdiv', time);
+  })
+}
+
 var time = minutes * 60 * 1000;
-var deadline = new Date(Date.parse(new Date()) + time);
-initializeClock('clockdiv', deadline);
+resetTimer('clockdiv', time)
+setupButton()

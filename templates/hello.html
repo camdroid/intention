@@ -1,10 +1,19 @@
+<head>
+  <script src="https://use.fontawesome.com/fae4f14f77.js"></script>
+</head>
+
+<body>
 <h1>Countdown Clock</h1>
 <div id="clockdiv">
   <script>var minutes = '{{minutes_from_flask }}'</script>
   <div>
-    <span class="minutes"></span>
-    <span class="seconds"></span>
+    <div>
+      <span class="minutes"></span>
+      <span class="seconds"></span>
+    </div>
+    <button id="reset"><i class="fa fa-play" aria-hidden="true"></i></button>
   </div>
   <link rel="stylesheet" href="{{ url_for('static', filename='countdown.css') }}"></link>
   <script type="text/javascript" src="{{ url_for('static', filename='countdown.js') }}"></script>
 </div>
+</body>
